@@ -46,18 +46,18 @@ return {
 
             vim.keymap.set("n", "gd", function()
                 vim.lsp.buf.definition()
-            end, {})
+            end, { desc = "Go To Definition" })
             vim.keymap.set("n", "K", function()
                 vim.lsp.buf.hover()
-            end, {})
-            vim.keymap.set("n", "gf", "<cmd>Lspsaga lsp_finder<CR>", {})   -- show definition, references
-            vim.keymap.set("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", {}) -- got to declaration
+            end, { desc = "Hover" })
+            vim.keymap.set("n", "gf", "<cmd>Lspsaga lsp_finder<CR>", {})                               -- show definition, references
+            vim.keymap.set("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", { desc = "Go To Declaration" }) -- got to declaration
             vim.keymap.set("n", "<leader>rr", function()
                 vim.lsp.buf.rename()
-            end, {}) -- got to declaration
+            end, { desc = "Refactor Rename" })
             vim.keymap.set("n", "<leader>ca", function()
                 vim.lsp.buf.code_action()
-            end, {}) -- got to declaration
+            end, { desc = "Code Action" })
             -- vim.keymap.set("n", "<leader>fr", function() vim.lsp.buf.references() end, opts) -- got to declaration
 
             -- diagnostics
